@@ -36,12 +36,12 @@ export default {
             //code here
         },
         editorInit: function () {
-            require('brace/ext/language_tools') //language extension prerequsite...
-            require('brace/mode/html')                
-            require('brace/mode/javascript')    //language
-            require('brace/mode/less')
-            require('brace/theme/monokai')
-            require('brace/snippets/javascript') //snippet
+            require('vue2-code-editor/node_modules/brace/ext/language_tools') //language extension prerequsite...
+            require('vue2-code-editor/node_modules/brace/mode/html') //language 
+            require('vue2-code-editor/node_modules/brace/mode/javascript')   
+            require('vue2-code-editor/node_modules/brace/mode/less')
+            require('vue2-code-editor/node_modules/brace/theme/monokai')
+            require('vue2-code-editor/node_modules/brace/snippets/javascript') //snippet
         }
     },
     ...
@@ -72,7 +72,7 @@ export default {
         {
             name: 'save',
             bindKey: { win: 'Ctrl-s', mac: 'Command-s' },
-            exec: dataSumit,
+            exec: null,
             readOnly: true,
         },
     ]"

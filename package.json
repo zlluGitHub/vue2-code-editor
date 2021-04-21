@@ -1,6 +1,6 @@
 {
   "name": "vue2-code-editor",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "description": "Vue2-code-editor is a front-end code editor for vue development based on ace.",
   "main": "index.js",
   "scripts": {
