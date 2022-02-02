@@ -17,7 +17,8 @@ module.exports = {
         height: true,
         width: true,
         commands: Array,
-        options: Object
+        options: Object,
+        lazymodel: {type:Boolean,default:false}
     },
     data: function () {
         return {
@@ -70,6 +71,7 @@ module.exports = {
         let theme = this.theme || 'chrome';
 
         require('brace/ext/emmet');
+        require('brace/ext/searchbox');
 
         let editor = vm.editor = ace.edit(this.$el);
 
@@ -85,9 +87,20 @@ module.exports = {
         this.contentBackup = this.value;
 
         editor.on('change', function () {
+          vm.$emit('dirty');
+          if(!vm.lazymodel){
             let content = editor.getValue();
             vm.$emit('input', content);
             vm.contentBackup = content;
+          }
+        });
+        editor.on('blur', function () {
+          if(vm.lazymodel){
+            let content = editor.getValue();
+            vm.$emit('input', content);
+            vm.contentBackup = content;
+          }
+          vm.$emit('blur');
         });
         if (vm.options)
             editor.setOptions(vm.options);
