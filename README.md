@@ -86,7 +86,7 @@ prop `v-model`  is required
 
 prop `lang` and `theme` is same as [ace-editor's doc](https://github.com/ajaxorg/ace)
 
-prop `height` and `width` could be one of these:  `200`, `200px`, `50%`, '60vh'
+prop `height` and `width` could be one of these:  `200`, `200px`, `50%`, `60vh`
 
 prop `lazymodel` true : will only update the v-model on blur
 
